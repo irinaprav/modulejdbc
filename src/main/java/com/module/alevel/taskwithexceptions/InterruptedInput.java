@@ -13,7 +13,6 @@ public class InterruptedInput implements Runnable {
     public static String current = "";
 
     public void run() {
-        System.out.println(Thread.interrupted());
         while (!Thread.interrupted()) {
             try {
                 BufferedReader input = new BufferedReader(
@@ -39,7 +38,7 @@ public class InterruptedInput implements Runnable {
             Thread.sleep(2000);
             System.out.println("Checking...");
             if (getCurrent().equals("")){ thread.interrupt(); break;}
-                else setCurrent("");
+            else setCurrent("");
         }
     }
 }
